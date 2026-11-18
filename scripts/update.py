@@ -234,6 +234,18 @@ def customize_source_config(sid, data):
         if name in replacements:
             site["name"] = replacements[name]
 
+        # 儿童启蒙原配置使用相对路径；聚合输出后相对路径会指向本仓库
+        # output 目录，无法保证命中肥猫原始资源。改为同一维护仓库的绝对地址。
+        if site.get("key") == "儿童":
+            site["api"] = (
+                "https://gh-proxy.org/https://raw.githubusercontent.com/"
+                "fantaiying7/EXT/refs/heads/main/drpy2.min.js"
+            )
+            site["ext"] = (
+                "https://gh-proxy.org/https://raw.githubusercontent.com/"
+                "fantaiying7/EXT/refs/heads/main/%E5%85%94%E5%B0%8F%E8%B4%9D.js"
+            )
+
     # 完整新增索尼影视站点，保留其独立接口、分类、搜索和筛选能力。
     sony_site = {
         "key": "主力源",
