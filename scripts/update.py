@@ -238,11 +238,11 @@ def customize_source_config(sid, data):
         # output 目录，无法保证命中肥猫原始资源。改为同一维护仓库的绝对地址。
         if site.get("key") == "儿童":
             site["api"] = (
-                "https://gh-proxy.org/https://raw.githubusercontent.com/"
+                "https://raw.githubusercontent.com/"
                 "fantaiying7/EXT/refs/heads/main/drpy2.min.js"
             )
             site["ext"] = (
-                "https://gh-proxy.org/https://raw.githubusercontent.com/"
+                "https://raw.githubusercontent.com/"
                 "fantaiying7/EXT/refs/heads/main/%E5%85%94%E5%B0%8F%E8%B4%9D.js"
             )
 
@@ -348,7 +348,7 @@ def main() -> int:
         or os.environ.get("REPO")
         or DEFAULT_REPO
     )
-    raw_base = f"https://gh-proxy.org/https://raw.githubusercontent.com/{repo}/main/output"
+    raw_base = f"https://raw.githubusercontent.com/{repo}/main/output"
 
     status = {"updated_at": now_str, "repo": repo, "sources": []}
     subscriptions = []
