@@ -222,9 +222,14 @@ def customize_source_config(sid, data):
     if sid != "feimao" or not isinstance(data, dict):
         return data
 
+    # 用户已实测 push_agent 推送入口无效，从发哥精选中移除，避免出现重复菜单。
+    data["sites"] = [
+        site for site in (data.get("sites", []) or [])
+        if not (isinstance(site, dict) and site.get("key") == "push_agent")
+    ]
+
     replacements = {
         "🐼┃QQ频道：肥猫宝贝┃": "🐼┃发哥精选┃",
-        "QQ频道：肥猫宝贝": "发哥精选",
     }
 
     for site in data.get("sites", []) or []:
