@@ -218,7 +218,7 @@ def merge_configs(fetched):
 
 
 def customize_source_config(sid, data):
-    """为肥猫源替换指定的 QQ 频道展示名称，不修改其他站点。"""
+    """定制肥猫源：替换展示名称，并将索尼影视作为完整新站点加入。"""
     if sid != "feimao" or not isinstance(data, dict):
         return data
 
@@ -233,6 +233,33 @@ def customize_source_config(sid, data):
         name = site.get("name")
         if name in replacements:
             site["name"] = replacements[name]
+
+    # 完整新增索尼影视站点，保留其独立接口、分类、搜索和筛选能力。
+    sony_site = {
+        "key": "主力源",
+        "name": "🚄索尼影视",
+        "type": 1,
+        "api": "https://suoniapi.com/api.php/provide/vod/?ac=list",
+        "playUrl": "",
+        "searchable": 1,
+        "quickSearch": 1,
+        "filterable": 1,
+        "categories": [
+            "科幻片", "动作片", "恐怖片", "纪录片", "爱情片", "战争片",
+            "剧情片", "喜剧片", "大陆剧", "港澳剧", "台湾剧", "欧美剧",
+            "动漫电影", "韩剧", "日剧", "泰剧"
+        ]
+    }
+
+    sites = data.setdefault("sites", [])
+    if not any(
+        isinstance(site, dict) and (
+            site.get("key") == sony_site["key"]
+            or site.get("api") == sony_site["api"]
+        )
+        for site in sites
+    ):
+        sites.append(sony_site)
 
     return data
 
