@@ -264,14 +264,21 @@ def customize_source_config(sid, data):
     }
 
     sites = data.setdefault("sites", [])
-    if not any(
-        isinstance(site, dict) and (
-            site.get("key") == sony_site["key"]
-            or site.get("api") == sony_site["api"]
-        )
-        for site in sites
-    ):
+    existing_sony = next(
+        (
+            site for site in sites
+            if isinstance(site, dict) and (
+                site.get("key") == sony_site["key"]
+                or site.get("api") == sony_site["api"]
+            )
+        ),
+        None,
+    )
+    if existing_sony is None:
         sites.append(sony_site)
+    else:
+        # 已存在的索尼站点也必须同步自定义分类顺序，不能只处理新增站点。
+        existing_sony["categories"] = sony_site["categories"]
 
     return data
 
