@@ -486,15 +486,6 @@
       }
     },
     {
-      "key": "push_agent",
-      "name": "发哥精选",
-      "type": 3,
-      "api": "csp_Push",
-      "playerType": "1",
-      "searchable": 0,
-      "ext": ".json/txt/ken.txt"
-    },
-    {
       "key": "主力源",
       "name": "🚄索尼影视",
       "type": 1,
@@ -1525,7 +1516,7 @@
       "changeable": 0
     },
     {
-      "key": "wangerxiao_push_agent",
+      "key": "push_agent",
       "name": "推送",
       "type": 3,
       "api": "csp_PushGuard",
