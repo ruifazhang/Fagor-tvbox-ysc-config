@@ -380,7 +380,7 @@
       "key": "儿童",
       "name": "📚┃儿童┃启蒙",
       "type": 3,
-      "api": "./api/drpy2.min.js",
+      "api": "https://gh-proxy.org/https://raw.githubusercontent.com/fantaiying7/EXT/refs/heads/main/drpy2.min.js",
       "searchable": 0,
       "quickSearch": 0,
       "changeable": 0,
@@ -388,7 +388,7 @@
         "type": "rect",
         "ratio": 1.597
       },
-      "ext": "./js/兔小贝.js"
+      "ext": "https://gh-proxy.org/https://raw.githubusercontent.com/fantaiying7/EXT/refs/heads/main/%E5%85%94%E5%B0%8F%E8%B4%9D.js"
     },
     {
       "key": "csp_少儿",
