@@ -6,7 +6,7 @@
   "sites": [
     {
       "key": "豆瓣",
-      "name": "🐼┃QQ频道：肥猫宝贝┃",
+      "name": "🐼┃发哥精选┃",
       "type": 3,
       "api": "csp_Douban",
       "searchable": 0
@@ -452,7 +452,7 @@
     },
     {
       "key": "push_agent",
-      "name": "QQ频道：肥猫宝贝",
+      "name": "发哥精选",
       "type": 3,
       "api": "csp_Push",
       "playerType": "1",
