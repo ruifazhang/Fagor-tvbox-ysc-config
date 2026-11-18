@@ -217,6 +217,26 @@ def merge_configs(fetched):
     return merged
 
 
+def customize_source_config(sid, data):
+    """为肥猫源替换指定的 QQ 频道展示名称，不修改其他站点。"""
+    if sid != "feimao" or not isinstance(data, dict):
+        return data
+
+    replacements = {
+        "🐼┃QQ频道：肥猫宝贝┃": "🐼┃发哥精选┃",
+        "QQ频道：肥猫宝贝": "发哥精选",
+    }
+
+    for site in data.get("sites", []) or []:
+        if not isinstance(site, dict):
+            continue
+        name = site.get("name")
+        if name in replacements:
+            site["name"] = replacements[name]
+
+    return data
+
+
 README_PATH = os.path.join(ROOT, "README.md")
 STATUS_START = "<!-- STATUS_START -->"
 STATUS_END = "<!-- STATUS_END -->"
@@ -307,6 +327,7 @@ def main() -> int:
         for url in urls:
             try:
                 data = fetch_config(url)
+                data = customize_source_config(sid, data)
                 out_path = os.path.join(OUTPUT_DIR, f"{sid}.json")
                 with open(out_path, "w", encoding="utf-8") as f:
                     json.dump(data, f, ensure_ascii=False, indent=2)
@@ -335,7 +356,10 @@ def main() -> int:
                 try:
                     with open(cache_path, "r", encoding="utf-8") as f:
                         cached = json.load(f)
+                    cached = customize_source_config(sid, cached)
                     if is_valid_tvbox_config(cached):
+                        with open(cache_path, "w", encoding="utf-8") as f:
+                            json.dump(cached, f, ensure_ascii=False, indent=2)
                         subscriptions.append(
                             {"name": name, "url": f"{raw_base}/{sid}.json"}
                         )
