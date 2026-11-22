@@ -1,14 +1,13 @@
 {
-  "updated_at": "2026-11-22 04:27:06",
+  "updated_at": "2026-11-22 17:39:03",
   "repo": "ruifazhang/Fagor-tvbox-ysc-config",
   "sources": [
     {
       "id": "feimao",
       "name": "发哥精选",
       "ok": true,
-      "used_url": "(缓存)",
-      "error": "401 Client Error:  for url: https://6296.kstore.vip/facat.json",
-      "cached": true
+      "used_url": "https://6296.kstore.vip/facat.json",
+      "error": null
     },
     {
       "id": "fantaiying",
