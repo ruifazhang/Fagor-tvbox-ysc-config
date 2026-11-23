@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "purpose": "发哥精选与馨馨精选统一订阅的重建底稿",
+  "migration": {
+    "strategy": "copy_all_then_curate",
+    "initiallyKeepAllSites": true,
+    "allowDuplicates": true,
+    "source": "output/单仓聚合.json",
+    "target": "output/精选单仓.json",
+    "legacyOutputUntouched": true
+  },
+  "rootSections": [
+    {
+      "id": "fagor",
+      "name": "发哥精选",
+      "status": "staging"
+    },
+    {
+      "id": "xinxin",
+      "name": "馨馨精选",
+      "status": "catalog_staged"
+    }
+  ],
+  "xinxinCategories": [
+    {
+      "id": "cognitive",
+      "name": "认知启蒙"
+    },
+    {
+      "id": "songs",
+      "name": "儿歌律动"
+    },
+    {
+      "id": "stories",
+      "name": "绘本故事"
+    },
+    {
+      "id": "nature",
+      "name": "动物自然"
+    },
+    {
+      "id": "growth",
+      "name": "生活成长"
+    },
+    {
+      "id": "animation",
+      "name": "儿童动画",
+      "collections": [
+        {
+          "id": "beilehu-songs",
+          "name": "贝乐虎儿歌"
+        }
+      ]
+    }
+  ],
+  "cleanup": {
+    "removeInvalidSources": false,
+    "removeDuplicates": false,
+    "reason": "首轮按用户要求完整迁移，后续再逐项人工筛选"
+  }
+}
