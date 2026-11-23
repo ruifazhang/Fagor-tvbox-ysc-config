@@ -444,6 +444,13 @@ def main() -> int:
             json.dump(merged, f, ensure_ascii=False, indent=2)
         print(f"聚合单仓：{merged_path}（共 {len(merged.get('sites', []))} 个站点）")
 
+        # 新版精选配置：先完整复制现有聚合结果，作为独立整理副本。
+        # 初期不删减任何站点，后续通过 config/curation.json 维护保留清单。
+        curated_path = os.path.join(OUTPUT_DIR, "精选单仓.json")
+        with open(curated_path, "w", encoding="utf-8") as f:
+            json.dump(merged, f, ensure_ascii=False, indent=2)
+        print(f"精选单仓（全量迁移底稿）：{curated_path}（共 {len(merged.get('sites', []))} 个站点）")
+
     # 生成更新状态文件（时间取全部抓取完成之后）
     status["updated_at"] = datetime.datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S")
     with open(os.path.join(OUTPUT_DIR, "status.json"), "w", encoding="utf-8") as f:
