@@ -1,0 +1,18 @@
+{
+  "spider": "https://img2.gelonghui.com/library/3f9b9-de4a5d2c-7fea-4d70-8a85-79be6c379621.png;md5;3f9b9cac793a3e9b818131c8a7208800",
+  "warningText": "发哥精选采集器独立测试入口。此配置仅用于验证自研 CMS 聚合 Spider，不替代原订阅。",
+  "sites": [
+    {
+      "key": "Fagor-CMS-Test",
+      "name": "🧪 发哥精选｜CMS聚合测试",
+      "type": 3,
+      "api": "csp_Fagor",
+      "jar": "https://raw.githubusercontent.com/ruifazhang/Fagor-tvbox-ysc-config/main/spider/fagor-spider.jar",
+      "ext": "https://raw.githubusercontent.com/ruifazhang/Fagor-tvbox-ysc-config/main/config/fagor-cms.json",
+      "searchable": 1,
+      "quickSearch": 1,
+      "filterable": 1,
+      "timeout": 30
+    }
+  ]
+}
