@@ -52,19 +52,20 @@ tvbox-ysc-config/
 
 | 类型 | 地址 | 说明 |
 | --- | --- | --- |
-| **多仓订阅（推荐）** | `https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/多仓订阅.json` | App 内可在各源之间切换 |
-| **单仓聚合** | `https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/单仓聚合.json` | 所有源站点合并成一个，无需切换 |
-| **精选单仓（重建底稿）** | `https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/精选单仓.json` | 现有站点完整复制，供后续筛选整理；暂不替代旧订阅 |
-| 单仓 · 肥猫 | `https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/feimao.json` | 单独使用某一个源 |
-| 单仓 · 饭太硬 | `https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/fantaiying.json` | |
-| 单仓 · 王二小 | `https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/wangerxiao.json` | |
-| 单仓 · 老刘备 | `https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/laoliubei.json` | |
-| 单仓 · 小马 | `https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/xiaoma.json` | |
-| 单仓 · 讴歌 | `https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/ouge.json` | |
-| 单仓 · 4K小盒子 | `https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/4k.json` | |
-| 单仓 · 小盒子单仓 | `https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/xiaohezi.json` | |
-| 单仓 · 拾光多仓 | `https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/shiguang.json` | |
-| 单仓 · 挺好分享多仓 | `https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/tinghao.json` | |
+| **多仓订阅（推荐）** | `https://raw.githubusercontent.com/ruifazhang/Fagor-tvbox-ysc-config/main/output/多仓订阅.json` | App 内可在各源之间切换 |
+| **单仓聚合** | `https://raw.githubusercontent.com/ruifazhang/Fagor-tvbox-ysc-config/main/output/单仓聚合.json` | 所有源站点合并成一个，无需切换 |
+| **精选单仓（重建底稿）** | `https://raw.githubusercontent.com/ruifazhang/Fagor-tvbox-ysc-config/main/output/精选单仓.json` | 现有站点完整复制，供后续筛选整理；暂不替代旧订阅 |
+| **发哥精选测试** | `https://raw.githubusercontent.com/ruifazhang/Fagor-tvbox-ysc-config/main/output/发哥精选测试.json` | 独立测试自研 CMS 聚合 Spider，不影响原订阅 |
+| 单仓 · 肥猫 | `https://raw.githubusercontent.com/ruifazhang/Fagor-tvbox-ysc-config/main/output/feimao.json` | 单独使用某一个源 |
+| 单仓 · 饭太硬 | `https://raw.githubusercontent.com/ruifazhang/Fagor-tvbox-ysc-config/main/output/fantaiying.json` | |
+| 单仓 · 王二小 | `https://raw.githubusercontent.com/ruifazhang/Fagor-tvbox-ysc-config/main/output/wangerxiao.json` | |
+| 单仓 · 老刘备 | `https://raw.githubusercontent.com/ruifazhang/Fagor-tvbox-ysc-config/main/output/laoliubei.json` | |
+| 单仓 · 小马 | `https://raw.githubusercontent.com/ruifazhang/Fagor-tvbox-ysc-config/main/output/xiaoma.json` | |
+| 单仓 · 讴歌 | `https://raw.githubusercontent.com/ruifazhang/Fagor-tvbox-ysc-config/main/output/ouge.json` | |
+| 单仓 · 4K小盒子 | `https://raw.githubusercontent.com/ruifazhang/Fagor-tvbox-ysc-config/main/output/4k.json` | |
+| 单仓 · 小盒子单仓 | `https://raw.githubusercontent.com/ruifazhang/Fagor-tvbox-ysc-config/main/output/xiaohezi.json` | |
+| 单仓 · 拾光多仓 | `https://raw.githubusercontent.com/ruifazhang/Fagor-tvbox-ysc-config/main/output/shiguang.json` | |
+| 单仓 · 挺好分享多仓 | `https://raw.githubusercontent.com/ruifazhang/Fagor-tvbox-ysc-config/main/output/tinghao.json` | |
 
 > 多仓订阅与单仓文件里的地址由脚本根据 `GITHUB_REPOSITORY` 环境变量自动生成。若国内直连 raw.githubusercontent.com 慢，可套一层 `ghproxy` / `gh-proxy` 等加速前缀。
 
