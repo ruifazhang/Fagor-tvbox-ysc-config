@@ -120,9 +120,18 @@ public class Fagor extends Spider {
         }
     }
     private String action(String api,String query) {
-        String base=api;
-        if(base.contains("?")) return base+"&"+query;
-        return base+"?"+query;
+        String[] parts=api.split("\\?",2);
+        String base=parts[0];
+        String oldQuery=parts.length>1?parts[1]:"";
+        StringBuilder merged=new StringBuilder();
+        for(String item:oldQuery.split("&")) {
+            if(item.isEmpty() || item.startsWith("ac=")) continue;
+            if(merged.length()>0) merged.append("&");
+            merged.append(item);
+        }
+        if(merged.length()>0) merged.append("&");
+        merged.append(query);
+        return base+"?"+merged.toString();
     }
     private String enc(String s) { try { return URLEncoder.encode(s==null?"":s,"UTF-8"); } catch(Exception e) { return ""; } }
     private String get(String address) throws Exception {
