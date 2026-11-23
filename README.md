@@ -54,6 +54,7 @@ tvbox-ysc-config/
 | --- | --- | --- |
 | **多仓订阅（推荐）** | `https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/多仓订阅.json` | App 内可在各源之间切换 |
 | **单仓聚合** | `https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/单仓聚合.json` | 所有源站点合并成一个，无需切换 |
+| **精选单仓（重建底稿）** | `https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/精选单仓.json` | 现有站点完整复制，供后续筛选整理；暂不替代旧订阅 |
 | 单仓 · 肥猫 | `https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/feimao.json` | 单独使用某一个源 |
 | 单仓 · 饭太硬 | `https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/fantaiying.json` | |
 | 单仓 · 王二小 | `https://raw.githubusercontent.com/Lightconer/tvbox-ysc-config/main/output/wangerxiao.json` | |
