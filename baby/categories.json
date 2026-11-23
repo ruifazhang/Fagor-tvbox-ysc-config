@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "title": "馨馨精选",
+  "categories": [
+    {
+      "id": "cognition",
+      "name": "认知启蒙",
+      "enabled": true
+    },
+    {
+      "id": "songs",
+      "name": "儿歌律动",
+      "enabled": true
+    },
+    {
+      "id": "picture-books",
+      "name": "绘本故事",
+      "enabled": true
+    },
+    {
+      "id": "nature",
+      "name": "动物自然",
+      "enabled": true
+    },
+    {
+      "id": "life-skills",
+      "name": "生活成长",
+      "enabled": true
+    },
+    {
+      "id": "animation",
+      "name": "儿童动画",
+      "enabled": true,
+      "collections": [
+        {
+          "id": "beilehu-songs",
+          "name": "贝乐虎儿歌"
+        }
+      ]
+    }
+  ]
+}
