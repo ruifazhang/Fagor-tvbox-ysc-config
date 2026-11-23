@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "policy": {
+    "minimumDurationSeconds": 300,
+    "unknownDuration": "exclude_pending_review",
+    "deduplicate": true
+  },
+  "items": [
+    {
+      "id": "beilehu-doctor-s1",
+      "category": "animation",
+      "collection": "beilehu-songs",
+      "title": "贝乐虎之神奇医生第一季",
+      "source": {
+        "siteKey": "咕噜",
+        "siteName": "🕊┃︎咕噜┃APP",
+        "preferredLine": "蚂蚁资源"
+      },
+      "status": "user_verified_playable"
+    },
+    {
+      "id": "beilehu-doctor-s2",
+      "category": "animation",
+      "collection": "beilehu-songs",
+      "title": "贝乐虎之神奇医生第二季",
+      "source": {
+        "siteKey": "咕噜",
+        "siteName": "🕊┃︎咕噜┃APP",
+        "preferredLine": "Bilibili"
+      },
+      "status": "user_verified_playable"
+    },
+    {
+      "id": "beilehu-auto-repair",
+      "category": "animation",
+      "collection": "beilehu-songs",
+      "title": "贝乐虎之最强汽修师",
+      "source": {
+        "siteKey": "咕噜",
+        "siteName": "🕊┃︎咕噜┃APP",
+        "preferredLine": null
+      },
+      "status": "needs_source_verification"
+    }
+  ]
+}
