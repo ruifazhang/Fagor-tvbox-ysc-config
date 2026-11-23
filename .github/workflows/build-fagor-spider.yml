@@ -5,6 +5,8 @@ on:
     paths:
       - 'spider/**'
       - '.github/workflows/build-fagor-spider.yml'
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,6 +25,13 @@ jobs:
         run: |
           chmod +x spider/build.sh
           spider/build.sh
+      - name: Commit built JAR for stable subscription URL
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add spider/fagor-spider.jar
+          git commit -m "Build Fagor Spider JAR" || echo "No JAR changes"
+          git push
       - uses: actions/upload-artifact@v4
         with:
           name: fagor-spider
