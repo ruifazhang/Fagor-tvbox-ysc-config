@@ -42,7 +42,7 @@ public class Fagor extends Spider {
         } catch (Exception ignored) { }
     }
 
-    @Override public String homeContent(boolean filter) {
+    @Override public String homeContent(boolean filter) throws Exception {
         JSONArray classes=new JSONArray(), list=new JSONArray();
         for (int i=0;i<sources.size();i++) {
             Source s=sources.get(i);
@@ -63,9 +63,9 @@ public class Fagor extends Spider {
         return new JSONObject().put("class",classes).put("list",list).toString();
     }
 
-    @Override public String homeVideoContent() { return new JSONObject().put("list",new JSONArray()).toString(); }
+    @Override public String homeVideoContent() throws Exception { return new JSONObject().put("list",new JSONArray()).toString(); }
 
-    @Override public String categoryContent(String tid,String pg,boolean filter,HashMap<String,String> extend) {
+    @Override public String categoryContent(String tid,String pg,boolean filter,HashMap<String,String> extend) throws Exception {
         try {
             String[] p=tid.split("\\|",2); int idx=Integer.parseInt(p[0]);
             if(idx<0 || idx>=sources.size()) return empty();
@@ -79,7 +79,7 @@ public class Fagor extends Spider {
         } catch(Exception e) { return empty(); }
     }
 
-    @Override public String detailContent(List<String> ids) {
+    @Override public String detailContent(List<String> ids) throws Exception {
         JSONArray out=new JSONArray();
         if(ids==null) return new JSONObject().put("list",out).toString();
         for(String id:ids) try {
@@ -92,9 +92,9 @@ public class Fagor extends Spider {
         return new JSONObject().put("list",out).toString();
     }
 
-    @Override public String searchContent(String key,boolean quick) { return searchContent(key,quick,"1"); }
+    @Override public String searchContent(String key,boolean quick) throws Exception { return searchContent(key,quick,"1"); }
 
-    @Override public String searchContent(String key,boolean quick,String pg) {
+    @Override public String searchContent(String key,boolean quick,String pg) throws Exception {
         JSONArray out=new JSONArray();
         for(int i=0;i<sources.size();i++) try {
             Source s=sources.get(i);
@@ -104,7 +104,7 @@ public class Fagor extends Spider {
         return new JSONObject().put("list",out).toString();
     }
 
-    @Override public String playerContent(String flag,String id,List<String> vipFlags) {
+    @Override public String playerContent(String flag,String id,List<String> vipFlags) throws Exception {
         return new JSONObject().put("parse",0).put("playUrl","").put("url",id).put("header",new JSONObject()).toString();
     }
 
