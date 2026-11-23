@@ -70,7 +70,7 @@ public class Fagor extends Spider {
             String[] p=tid.split("\\|",2); int idx=Integer.parseInt(p[0]);
             if(idx<0 || idx>=sources.size()) return empty();
             String page=(pg==null || pg.isEmpty())?"1":pg;
-            String url=action(sources.get(idx).api,"ac=list&ac=list&t="+enc(p.length>1?p[1]:"")+"&pg="+enc(page));
+            String url=action(sources.get(idx).api,"ac=list&t="+enc(p.length>1?p[1]:"")+"&pg="+enc(page));
             JSONObject data=new JSONObject(get(url)); JSONArray out=new JSONArray();
             appendVideos(out,data.optJSONArray("list"),idx,sources.get(idx).name);
             JSONObject result=new JSONObject().put("list",out);
@@ -124,7 +124,7 @@ public class Fagor extends Spider {
         if(base.contains("?")) return base+"&"+query;
         return base+"?"+query;
     }
-    private String enc(String s) { try { return URLEncoder.encode(s==null?"":"s","UTF-8").replace("s",""); } catch(Exception e) { return ""; } }
+    private String enc(String s) { try { return URLEncoder.encode(s==null?"":s,"UTF-8"); } catch(Exception e) { return ""; } }
     private String get(String address) throws Exception {
         HttpURLConnection c=(HttpURLConnection)new URL(address).openConnection();
         c.setRequestMethod("GET"); c.setConnectTimeout(8000); c.setReadTimeout(10000);
