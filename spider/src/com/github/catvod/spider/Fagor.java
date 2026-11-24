@@ -98,7 +98,7 @@ public class Fagor extends Spider {
         JSONArray out=new JSONArray();
         for(int i=0;i<sources.size();i++) try {
             Source s=sources.get(i);
-            JSONObject data=new JSONObject(get(action(s.api,"ac=detail&wd="+enc(key)+"&pg="+enc(pg==null?"1":pg))));
+            JSONObject data=new JSONObject(get(action(s.api,"ac=list&wd="+enc(key)+"&pg="+enc(pg==null?"1":pg))));
             appendVideos(out,data.optJSONArray("list"),i,s.name);
         } catch(Exception ignored) { }
         return new JSONObject().put("list",out).toString();
